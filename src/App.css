@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.app {
+  font-family: "Bebas Neue", cursive;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  /* justify-content: space-between; */
+  width: 200px;
+}
+.toggle > span {
+  font-size: 40px;
+  color: gray;
+}
+.slider {
+  height: 40px;
+  width: 80px;
+  border-radius: 50px;
+  background-color: #d0d0d0;
+  position: relative;
+}
+.toggle.GOOD.active .slider {
+  background-color: #97c29b;
+}
+.toggle.FAST.active .slider {
+  background-color: #79bfec;
+}
+.toggle.CHEAP.active .slider {
+  background-color: #e86265;
+}
+
+.ball {
+  background: #e8e8e8;
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;
+  border: 0;
+}
+.toggle.GOOD.active .slider .ball {
+  background-color: #acd1af;
+}
+.toggle.FAST.active .slider .ball {
+  background-color: #93caed;
+}
+.toggle.CHEAP.active .slider .ball {
+  background-color: #f47174;
+}
+
+.toggle.active .ball {
+  animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(40px) scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
